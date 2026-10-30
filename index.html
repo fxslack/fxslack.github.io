@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>fxslack - slackfx, a small Slack client</title>
-<meta name="description" content="slackfx: a small Slack client for Windows that runs as one process, and slk, a Slack command line made for AI coding agents. Writes need a person's approval.">
+<meta name="description" content="slackfx: a small Slack client for Windows that runs as one process, with a command line made for AI coding agents in the same program. Writes need a person's approval.">
 <meta property="og:title" content="slackfx, a small Slack client">
 <meta property="og:description" content="One process instead of seven, and a command line whose writes need your approval.">
 <meta property="og:image" content="https://fxslack.github.io/img/social.png">
@@ -53,7 +53,7 @@
     <h1>slackfx<small>a small Slack client and command line, from fxslack</small></h1>
   </header>
 
-  <p class="lead">A Slack client for Windows that is one process instead of seven, and <code>slk</code>, a command line that reads Slack for you and asks a person before it writes. Both act as you, through a Slack app you create in your own workspace.</p>
+  <p class="lead">A Slack client for Windows that is one process instead of seven, with a command line in the same program that reads Slack for you and asks a person before it writes. Both act as you, through a Slack app you create in your own workspace.</p>
 
   <div class="actions">
     <a class="button primary" href="https://github.com/fxslack/slackfx/releases/latest">Download for Windows</a>
@@ -72,11 +72,11 @@
     </div>
     <div class="card">
       <h3>A command line for scripts and agents</h3>
-      <p><code>slk</code> reads channels, threads and search results, and exports a whole channel with its files. It is made to be driven by AI coding agents, so the output is plain and every verb has <code>--help</code>.</p>
+      <p><code>slackfx</code> followed by a verb reads channels, threads and search results, and exports a whole channel with its files. It is made to be driven by AI coding agents, so the output is plain and every verb has <code>--help</code>.</p>
     </div>
     <div class="card">
       <h3>Writes need a person</h3>
-      <p>When slackfx is running, <code>slk send</code>, <code>edit</code>, <code>delete</code> and <code>react</code> go through it. A window shows exactly what is about to be posted and waits for F2. Reads are free.</p>
+      <p>When slackfx is running, <code>slackfx send</code>, <code>edit</code>, <code>delete</code> and <code>react</code> go through it. A window shows exactly what is about to be posted and waits for F2. Reads are free.</p>
     </div>
   </div>
 
@@ -86,11 +86,11 @@
     <li>Install the app to your workspace and copy its User OAuth Token (<code>xoxp-</code>). Generate an app-level token with <code>connections:write</code> (<code>xapp-</code>) for live messages.</li>
     <li>Save them in <code>%USERPROFILE%\fxslack\slackfx\app-config.json</code>:
 <pre><code>{ "user_token": "xoxp-...", "app_token": "xapp-..." }</code></pre></li>
-    <li>Run <code>slk auth --app</code>, then <code>slk whoami</code>, then start <code>slackfx</code>.</li>
+    <li>Run <code>slackfx auth --app</code>, then <code>slackfx whoami</code>, then start <code>slackfx</code> with no arguments for the tray and the window.</li>
   </ol>
 
   <h2>Install</h2>
-  <p>Download <code>slackfx.exe</code> and <code>slk.exe</code> from the <a href="https://github.com/fxslack/slackfx/releases/latest">latest release</a> and run them. They need Java 25 or later. Each exe fetches its program file from the same release and checks it against a checksum built into it; <code>slackfx.exe -Xjr:update</code> moves to a newer release.</p>
+  <p>Download <code>slackfx.exe</code> from the <a href="https://github.com/fxslack/slackfx/releases/latest">latest release</a> and run it. It needs Java 25 or later. The exe fetches its program file from the same release and checks it against a checksum built into it, and is both the client and the command line. The client checks for a newer release when it starts and every 24 hours, and asks before it updates; <code>slackfx update</code> does it from a terminal.</p>
 
   <footer>slackfx is open source under the Apache-2.0 licence. It is an independent project, not affiliated with Slack or Salesforce; "Slack" is their trademark. <a href="https://github.com/fxslack">github.com/fxslack</a></footer>
 </main>
