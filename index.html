@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>fxslack - slackfx, a small Slack client</title>
-<meta name="description" content="slackfx: a small Slack client for Windows that runs as one process, with a command line made for AI coding agents in the same program. Writes need a person's approval.">
-<meta property="og:title" content="slackfx, a small Slack client">
+<title>fxslack - slackfx, a small chat client</title>
+<meta name="description" content="slackfx: a small chat client for Windows that runs as one process, with a command line made for AI coding agents in the same program. Writes need a person's approval.">
+<meta property="og:title" content="slackfx, a small chat client">
 <meta property="og:description" content="One process instead of seven, and a command line whose writes need your approval.">
 <meta property="og:image" content="https://fxslack.github.io/img/social.png">
 <link rel="icon" href="img/slackfx-icon.png">
@@ -53,10 +53,10 @@
 <main>
   <header>
     <img src="img/slackfx-icon.png" alt="">
-    <h1>slackfx<small>a small Slack client and command line, from fxslack</small></h1>
+    <h1>slackfx<small>a small chat client and command line, from fxslack</small></h1>
   </header>
 
-  <p class="lead">A Slack client for Windows that is one process instead of seven, with a command line in the same program that reads Slack for you and asks a person before it writes. Both act as you, through a Slack app you create in your own workspace.</p>
+  <p class="lead">A chat client for Windows that is one process instead of seven, with a command line in the same program that reads your workspace for you and asks a person before it changes anything. Both act as you, through an app you create in your own workspace.</p>
 
   <div class="actions">
     <a class="button primary" href="https://github.com/fxslack/slackfx/releases/latest">Download for Windows</a>
@@ -65,7 +65,7 @@
 
   <figure>
     <img src="img/release.png" width="1086" height="722" alt="slackfx showing the release channel of an invented workspace: a message with reactions and a thread, a code line, a build attachment, a file and a mention">
-    <figcaption>The window, on an invented workspace. <code>slackfx --demo</code> opens the same one without a Slack login.</figcaption>
+    <figcaption>The window, on an invented workspace. <code>slackfx --demo</code> opens the same one without a login.</figcaption>
   </figure>
 
   <h2>What it does</h2>
@@ -76,7 +76,7 @@
     </div>
     <div class="card">
       <h3>Messages as they arrive</h3>
-      <p>New messages show within a second through Slack's Socket Mode, with a notification for a direct message, a group chat or an @-mention. Channels, group chats and direct messages are in one list with a filter, and unread ones are marked.</p>
+      <p>New messages show within a second over a live socket connection, with a notification for a direct message, a group chat or an @-mention. Channels, group chats and direct messages are in one list with a filter, and unread ones are marked.</p>
     </div>
     <div class="card">
       <h3>A command line for scripts and agents</h3>
@@ -84,13 +84,13 @@
     </div>
     <div class="card">
       <h3>Writes need a person</h3>
-      <p>When slackfx is running, <code>slackfx send</code>, <code>edit</code>, <code>delete</code> and <code>react</code> go through it. A window shows exactly what is about to be posted and waits for F2. Reads are free.</p>
+      <p>Every change goes through the running client: <code>slackfx send</code>, <code>edit</code>, <code>delete</code>, <code>react</code>, <code>mark</code>, scheduling, and anything sent with <code>raw</code>. A window shows exactly what is about to happen and waits for F2. If the client is not running, the change is refused. Reads are free.</p>
     </div>
   </div>
 
   <h2>Set it up</h2>
   <ol class="steps">
-    <li>At <a href="https://api.slack.com/apps">api.slack.com/apps</a> create an app <em>from a manifest</em>, using <a href="https://github.com/fxslack/slackfx/blob/main/docs/slack-app-manifest.json">the manifest in the repository</a>. It asks for user-token scopes only.</li>
+    <li>At <a href="https://api.slack.com/apps">api.slack.com/apps</a> create an app <em>from a manifest</em>, using <a href="https://github.com/fxslack/slackfx/blob/main/docs/app-manifest.json">the manifest in the repository</a>. It asks for user-token scopes only.</li>
     <li>Install the app to your workspace and copy its User OAuth Token (<code>xoxp-</code>). Generate an app-level token with <code>connections:write</code> (<code>xapp-</code>) for live messages.</li>
     <li>Save them in <code>%USERPROFILE%\fxslack\slackfx\app-config.json</code>:
 <pre><code>{ "user_token": "xoxp-...", "app_token": "xapp-..." }</code></pre></li>
